@@ -7,7 +7,8 @@ This repository contains the source code for a Voting smart contract written in 
 The Voting smart contract allows users to register as voters, add candidates, and vote for their preferred candidates. It ensures secure and transparent voting, preventing double voting and allowing only registered voters to participate.
 
 ### Contract Address
-Deployed to starknet with the contract address - [0x03dec8c021503d659d454d812d8342fa7538fccb51fe7fe8e4683b4af5b79fad](https://sepolia.starkscan.co/contract/0x03dec8c021503d659d454d812d8342fa7538fccb51fe7fe8e4683b4af5b79fad)
+
+Deployed to starknet with the contract address - [0x07ac4a50f7ab19560e4710080da21401a6d5fa586f953ec0eb6206013dd20264](https://sepolia.starkscan.co/contract/0x07ac4a50f7ab19560e4710080da21401a6d5fa586f953ec0eb6206013dd20264)
 
 ### Features
 
@@ -50,29 +51,37 @@ Deployed to starknet with the contract address - [0x03dec8c021503d659d454d812d83
 ### Public Interface
 
 #### `register_voter(voter: ContractAddress) -> bool`
+
 Registers a new voter. Only the contract owner can call this function.
 
 #### `add_candidate(name: felt252) -> bool`
+
 Adds a new candidate. Only the contract owner can call this function.
 
 #### `vote(candidate_index: u8)`
+
 Allows a registered voter to vote for a candidate by index.
 
 #### `get_candidate(index: u8) -> Candidate`
+
 Retrieves candidate details by index.
 
 #### `get_candidate_vote(index: u8) -> u32`
+
 Gets the vote count of a candidate by index.
 
 #### `check_voter_eligibility(voter_address: ContractAddress) -> bool`
+
 Checks if a voter is registered.
 
 #### `winner() -> Candidate`
+
 Returns the candidate with the highest number of votes.
 
 ### Private Functions
 
 #### `only_owner()`
+
 Asserts that the caller is the contract owner.
 
 ## Events
@@ -144,4 +153,5 @@ let winner = contract.winner();
 ## License
 
 This project is licensed under the MIT License.
+
 # Cairo_voting
